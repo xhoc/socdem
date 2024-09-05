@@ -1,8 +1,17 @@
 
-(..5) hostile
-(5..15) frigid
-(15..30) cold
-(30..40) cool
-(40..55) neutral
-(55..75) warm
-(75..) very friendly
+(..10) hateful
+(10..15) hostile
+(15..20) frozen
+(20..25) frigid
+(25..30) cold
+(30..35) contempted
+(35..40) tense
+(40..45) uneasy
+(45..55) neutral
+(55..60) warm
+(60..65) cordial
+(65..70) friendly
+(70..75) genial
+(75..80) very friendly
+(80..85) affectionate
+(85..) united
