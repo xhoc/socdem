@@ -15,6 +15,8 @@ Chancellor Hermann Müller has died while in office. He will be greatly missed. 
 - @braun_chancellor: Otto Braun (SPD) for Chancellor.
 - @wels_chancellor: Otto Wels (SPD) for Chancellor.
 - @breitscheid_chancellor: Rudolf Breitscheid (SPD) for Chancellor.
+- @pfulf_chancellor: Antonie Pfülf (SPD) for Chancellor.
+- @woytinsky_chancellor: Wladimir Woytinsky (SPD) for Chancellor.
 - @bruning_chancellor: Let Heinrich Bruning of the Center Party become Chancellor.
 
 @braun_chancellor
@@ -33,6 +35,19 @@ Our coalition partners are reluctant to accept the new Chancellor, but they do n
 @breitscheid_chancellor
 on-arrival: chancellor = "Breitscheid"; chancellor_party = "SPD"; z_relation -= 5; dvp_relation -= 5; kpd_relation += 1
 subtitle: The Center Party is worried about his left-leaning tendencies.
+
+Our coalition partners are reluctant to accept the new Chancellor, but they do not make loud objections.
+
+@pfulf_chancellor
+on-arrival: chancellor = "Pfülf"; chancellor_party = "SPD"; z_relation -= 7; dvp_relation -= 2
+subtitle: A revolutionary pick, but the Center Party might not approve of a woman in power.
+
+Our coalition partners are reluctant to accept the new Chancellor, but they do not make loud objections.
+
+@woytinsky_chancellor
+view-if: wtb_adopted == 1
+on-arrival: chancellor = "Woytinsky"; chancellor_party = "SPD"; z_relation -= 3; dvp_relation -= 3; workers_spd += 2
+subtitle: His economic prowess has made him a popular pick.
 
 Our coalition partners are reluctant to accept the new Chancellor, but they do not make loud objections.
 
