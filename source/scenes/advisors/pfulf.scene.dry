@@ -13,6 +13,7 @@ Pfülf is a former teacher from Bavaria who came from a conservative Catholic fa
 - @build_peoples_party
 - @campaigning_peoples_party
 - @womens_rights_
+- @snap_election
 - @root: Return to main
 
 @support_peoples_party
@@ -51,3 +52,13 @@ choose-if: advisor_action_timer = 0 and spd_in_government
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The SPD is not currently in government. ?]
 on-arrival: advisor_action_timer = 6; womens_rights_timer -= 10
 go-to: womens_rights
+
+@snap_election
+title: Snap Election
+subtitle: Call a snap election.
+view-if: chancellor == "Pfülf"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer == 0 and chancellor == "Pfülf"
+on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
+
+We have called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].
