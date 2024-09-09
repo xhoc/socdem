@@ -12,6 +12,7 @@ Wladimir Woytinsky is a Russian Menshevik in exile, and the chief economist of t
 - @plan
 - @carry_out_policy
 - @depression
+- @snap_election
 - @root: Return to main
 
 @plan
@@ -39,3 +40,13 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: advisor_action_timer = 6; wtb_support += 2; center_dissent += 10; labor_strength += 1
 
 The WTB-plan, named for its primary supporters Woytinsky, Tarnow, and Baade, has been adopted as the unions' plan for getting us out of the depression. Woytinsky canvasses in favor of this policy through the SPD and the unions.
+
+@snap_election
+title: Snap Election
+subtitle: Call a snap election.
+view-if: chancellor == "Woytinsky"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer == 0 and chancellor == "Woytinsky"
+on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
+
+We have called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].
